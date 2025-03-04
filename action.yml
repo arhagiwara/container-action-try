@@ -8,14 +8,22 @@ inputs:
     description: 'Your input description here'
     required: true
     default: 'World'
+  who-are-you:
+    description: 'Your name is?'
+    required: true
+    default: 'I am'
+  
 
 # Define your outputs here.
 outputs:
   greeting:
     description: 'Your output description here'
+  result:
+    description: 'result code'
 
 runs:
   using: docker
   image: Dockerfile
   env:
     INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
+    WHO_ARE_YOU: ${{ inputs.who-are-you }}
